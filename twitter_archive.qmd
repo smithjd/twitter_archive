@@ -1,0 +1,82 @@
+---
+title: "twitter_archive"
+format: gfm
+---
+
+## Keeping up with the R community
+
+### There are many sources
+
+-   newsletters
+
+-   mastodon?
+
+-   Meetups
+
+## Twitter has been important
+
+The #rstats hashtag opens a world. Useful to follow specific individuals and the people they follow.
+
+Grabbing content can be a challenge. My process has been:
+
+-   Save Web pages that are referenced in Evernote with its web clipper plugin
+
+-   Save images
+
+-   Selective "likes"
+
+### Getting the Twitter Archive
+
+Here are instructions for downloading your archive from Twitter
+
+### Use the built-in html interface
+
+![](images/image-885175351.png)
+
+### Using R to access the data from your Twitter Archive
+
+Demonstration, looking at how to access and possible uses of `like.js` and `following.js`.
+
+```{r}
+#| label: libraries and such
+library(tidyverse)
+library(here)
+library(jsonlite)
+library(gt)
+```
+
+```{r}
+#| label: read the files
+
+following <- read_file(here("data", "following.js")) |>
+  str_sub(start = 30) |> 
+  fromJSON()
+
+like <- read_file(here("data", "like.js")) |>
+  str_sub(start = 25) |> 
+  fromJSON()
+
+
+```
+
+```{r}
+following_df <- as_tibble(flatten(following$following))
+like_df <- as_tibble(flatten(like$like))
+
+```
+
+```{r}
+like_df[1:100,2:3] |> 
+  filter(str_detect(fullText,"http")) |> 
+  gt()
+```
+
+## Other resources
+
+-   [Python twitter archive parser and other resources](https://github.com/timhutton/twitter-archive-parser)
+
+-   How to [download your twitter archive](https://support.twitter.com/articles/20170160)
+
+-   [A visual analysis around a twitter hashtag](https://blog.ouseful.info/2012/02/06/visualising-activity-round-a-twitter-hashtag-or-search-term-using-r/)
+
+-   [Albert Rapp - How to collect dataviz from Twitter into your note-taking system](https://albert-rapp.de/posts/09_get_twitter_posts_into_your_notetaking_system/09_get_twitter_posts_into_your_notetaking_system.html)
