@@ -53,17 +53,21 @@ following <- read_file(here("data", "following.js")) |>
   str_sub(start = 30) |> 
   fromJSON()
 
+str(following[[1]])
+
 like <- read_file(here("data", "like.js")) |>
   str_sub(start = 25) |> 
   fromJSON()
 
-
+str(like[[1]])
 ```
 
 ```{r}
 following_df <- as_tibble(flatten(following$following))
-like_df <- as_tibble(flatten(like$like))
+glimpse(following_df)
 
+like_df <- as_tibble(flatten(like$like))
+glimpse(like_df)
 ```
 
 ```{r}

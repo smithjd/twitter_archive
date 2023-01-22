@@ -80,15 +80,46 @@ following <- read_file(here("data", "following.js")) |>
   str_sub(start = 30) |> 
   fromJSON()
 
+str(following[[1]])
+```
+
+    'data.frame':   418 obs. of  2 variables:
+     $ accountId: chr  "257757365" "2311053678" "358192461" "102121156" ...
+     $ userLink : chr  "https://twitter.com/intent/user?user_id=257757365" "https://twitter.com/intent/user?user_id=2311053678" "https://twitter.com/intent/user?user_id=358192461" "https://twitter.com/intent/user?user_id=102121156" ...
+
+``` r
 like <- read_file(here("data", "like.js")) |>
   str_sub(start = 25) |> 
   fromJSON()
+
+str(like[[1]])
 ```
+
+    'data.frame':   609 obs. of  3 variables:
+     $ tweetId    : chr  "1588139679483777024" "1587544654202929153" "1586777080158642177" "1582977833869402112" ...
+     $ fullText   : chr  "Maple Tree and Small Birds, by Itō Jakuchū, ca. 1765 -1766 https://t.co/mFxOD2c8oZ" "Classic inference for startup ideas:\nDeductive➡️ Amazon: Bezos picked books based on industry analysis\nInducti"| __truncated__ "How did people discover new communities in the listserv days of the internet?\n\nSeeing many discussions of gro"| __truncated__ "@sharon000 @smithjd @lorenzwalthert @krlmlr Yes, it does work with `.qmd` files! \n\nYou can download the GitHu"| __truncated__ ...
+     $ expandedUrl: chr  "https://twitter.com/i/web/status/1588139679483777024" "https://twitter.com/i/web/status/1587544654202929153" "https://twitter.com/i/web/status/1586777080158642177" "https://twitter.com/i/web/status/1582977833869402112" ...
 
 ``` r
 following_df <- as_tibble(flatten(following$following))
-like_df <- as_tibble(flatten(like$like))
+glimpse(following_df)
 ```
+
+    Rows: 418
+    Columns: 2
+    $ accountId <chr> "257757365", "2311053678", "358192461", "102121156", "285589…
+    $ userLink  <chr> "https://twitter.com/intent/user?user_id=257757365", "https:…
+
+``` r
+like_df <- as_tibble(flatten(like$like))
+glimpse(like_df)
+```
+
+    Rows: 609
+    Columns: 3
+    $ tweetId     <chr> "1588139679483777024", "1587544654202929153", "15867770801…
+    $ fullText    <chr> "Maple Tree and Small Birds, by Itō Jakuchū, ca. 1765 -176…
+    $ expandedUrl <chr> "https://twitter.com/i/web/status/1588139679483777024", "h…
 
 ``` r
 gt_table <- like_df[1:100,2:3] |> 
