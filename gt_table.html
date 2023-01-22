@@ -1,110 +1,18 @@
-twitter_archive
-================
-
-## Keeping up with the R community
-
-### There are many sources
-
-- newsletters
-
-- mastodon?
-
-- Meetups
-
-## Twitter has been important
-
-The \#rstats hashtag opens a world. Useful to follow specific
-individuals and the people they follow.
-
-Grabbing content can be a challenge. My process has been:
-
-- Save Web pages that are referenced in Evernote using its handy web
-  clipper plugin
-- Save images to my photo library and take it from there
-- Selective “likes”
-- Extract relevant text with an OCR browser extension
-  https://github.com/amebalabs/TRex
-
-### Getting the Twitter Archive
-
-Request a download here: https://twitter.com/settings/download_your_data
-
-It can take a few days for it to be ready. You’ll get a direct message
-on Twitter when it’s ready to download.
-
-### Use the built-in html interface
-
-![](images/image-885175351.png)
-
-### Using R to access the data from your Twitter Archive
-
-Demonstration, looking at how to access and possible uses of `like.js`
-and `following.js`.
-
-``` r
-library(tidyverse)
-```
-
-    ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
-    ✔ ggplot2 3.4.0      ✔ purrr   1.0.0 
-    ✔ tibble  3.1.8      ✔ dplyr   1.0.10
-    ✔ tidyr   1.2.1      ✔ stringr 1.5.0 
-    ✔ readr   2.1.3      ✔ forcats 0.5.2 
-    ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-    ✖ dplyr::filter() masks stats::filter()
-    ✖ dplyr::lag()    masks stats::lag()
-
-``` r
-library(here)
-```
-
-    here() starts at /Users/jds/Documents/Library/R/twitter_archive
-
-``` r
-library(jsonlite)
-```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<style>body{background-color:white;}</style>
 
 
-    Attaching package: 'jsonlite'
-
-    The following object is masked from 'package:purrr':
-
-        flatten
-
-``` r
-library(gt)
-```
-
-``` r
-following <- read_file(here("data", "following.js")) |>
-  str_sub(start = 30) |> 
-  fromJSON()
-
-like <- read_file(here("data", "like.js")) |>
-  str_sub(start = 25) |> 
-  fromJSON()
-```
-
-``` r
-following_df <- as_tibble(flatten(following$following))
-like_df <- as_tibble(flatten(like$like))
-```
-
-``` r
-gt_table <- like_df[1:100,2:3] |> 
-  filter(str_detect(fullText,"http")) |> 
-  gt() 
-  gtsave(gt_table, "gt_table.html")
-  
-gt_table
-```
-
-<div id="dbgvzfontn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
+</head>
+<body>
+<div id="pzveloiefp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+  <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#dbgvzfontn .gt_table {
+#pzveloiefp .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -129,7 +37,7 @@ gt_table
   border-left-color: #D3D3D3;
 }
 
-#dbgvzfontn .gt_heading {
+#pzveloiefp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -141,12 +49,12 @@ gt_table
   border-right-color: #D3D3D3;
 }
 
-#dbgvzfontn .gt_caption {
+#pzveloiefp .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#dbgvzfontn .gt_title {
+#pzveloiefp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -158,7 +66,7 @@ gt_table
   border-bottom-width: 0;
 }
 
-#dbgvzfontn .gt_subtitle {
+#pzveloiefp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -170,13 +78,13 @@ gt_table
   border-top-width: 0;
 }
 
-#dbgvzfontn .gt_bottom_border {
+#pzveloiefp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dbgvzfontn .gt_col_headings {
+#pzveloiefp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -191,7 +99,7 @@ gt_table
   border-right-color: #D3D3D3;
 }
 
-#dbgvzfontn .gt_col_heading {
+#pzveloiefp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -211,7 +119,7 @@ gt_table
   overflow-x: hidden;
 }
 
-#dbgvzfontn .gt_column_spanner_outer {
+#pzveloiefp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -223,15 +131,15 @@ gt_table
   padding-right: 4px;
 }
 
-#dbgvzfontn .gt_column_spanner_outer:first-child {
+#pzveloiefp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dbgvzfontn .gt_column_spanner_outer:last-child {
+#pzveloiefp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dbgvzfontn .gt_column_spanner {
+#pzveloiefp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -243,7 +151,7 @@ gt_table
   width: 100%;
 }
 
-#dbgvzfontn .gt_group_heading {
+#pzveloiefp .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -269,7 +177,7 @@ gt_table
   text-align: left;
 }
 
-#dbgvzfontn .gt_empty_group_heading {
+#pzveloiefp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -284,15 +192,15 @@ gt_table
   vertical-align: middle;
 }
 
-#dbgvzfontn .gt_from_md > :first-child {
+#pzveloiefp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dbgvzfontn .gt_from_md > :last-child {
+#pzveloiefp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dbgvzfontn .gt_row {
+#pzveloiefp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -311,7 +219,7 @@ gt_table
   overflow-x: hidden;
 }
 
-#dbgvzfontn .gt_stub {
+#pzveloiefp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -324,7 +232,7 @@ gt_table
   padding-right: 5px;
 }
 
-#dbgvzfontn .gt_stub_row_group {
+#pzveloiefp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -338,11 +246,11 @@ gt_table
   vertical-align: top;
 }
 
-#dbgvzfontn .gt_row_group_first td {
+#pzveloiefp .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#dbgvzfontn .gt_summary_row {
+#pzveloiefp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -352,16 +260,16 @@ gt_table
   padding-right: 5px;
 }
 
-#dbgvzfontn .gt_first_summary_row {
+#pzveloiefp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#dbgvzfontn .gt_first_summary_row.thick {
+#pzveloiefp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#dbgvzfontn .gt_last_summary_row {
+#pzveloiefp .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -371,7 +279,7 @@ gt_table
   border-bottom-color: #D3D3D3;
 }
 
-#dbgvzfontn .gt_grand_summary_row {
+#pzveloiefp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -381,7 +289,7 @@ gt_table
   padding-right: 5px;
 }
 
-#dbgvzfontn .gt_first_grand_summary_row {
+#pzveloiefp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -391,11 +299,11 @@ gt_table
   border-top-color: #D3D3D3;
 }
 
-#dbgvzfontn .gt_striped {
+#pzveloiefp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dbgvzfontn .gt_table_body {
+#pzveloiefp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -404,7 +312,7 @@ gt_table
   border-bottom-color: #D3D3D3;
 }
 
-#dbgvzfontn .gt_footnotes {
+#pzveloiefp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -418,7 +326,7 @@ gt_table
   border-right-color: #D3D3D3;
 }
 
-#dbgvzfontn .gt_footnote {
+#pzveloiefp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -427,7 +335,7 @@ gt_table
   padding-right: 5px;
 }
 
-#dbgvzfontn .gt_sourcenotes {
+#pzveloiefp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -441,7 +349,7 @@ gt_table
   border-right-color: #D3D3D3;
 }
 
-#dbgvzfontn .gt_sourcenote {
+#pzveloiefp .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -449,68 +357,68 @@ gt_table
   padding-right: 5px;
 }
 
-#dbgvzfontn .gt_left {
+#pzveloiefp .gt_left {
   text-align: left;
 }
 
-#dbgvzfontn .gt_center {
+#pzveloiefp .gt_center {
   text-align: center;
 }
 
-#dbgvzfontn .gt_right {
+#pzveloiefp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dbgvzfontn .gt_font_normal {
+#pzveloiefp .gt_font_normal {
   font-weight: normal;
 }
 
-#dbgvzfontn .gt_font_bold {
+#pzveloiefp .gt_font_bold {
   font-weight: bold;
 }
 
-#dbgvzfontn .gt_font_italic {
+#pzveloiefp .gt_font_italic {
   font-style: italic;
 }
 
-#dbgvzfontn .gt_super {
+#pzveloiefp .gt_super {
   font-size: 65%;
 }
 
-#dbgvzfontn .gt_footnote_marks {
+#pzveloiefp .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#dbgvzfontn .gt_asterisk {
+#pzveloiefp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#dbgvzfontn .gt_indent_1 {
+#pzveloiefp .gt_indent_1 {
   text-indent: 5px;
 }
 
-#dbgvzfontn .gt_indent_2 {
+#pzveloiefp .gt_indent_2 {
   text-indent: 10px;
 }
 
-#dbgvzfontn .gt_indent_3 {
+#pzveloiefp .gt_indent_3 {
   text-indent: 15px;
 }
 
-#dbgvzfontn .gt_indent_4 {
+#pzveloiefp .gt_indent_4 {
   text-indent: 20px;
 }
 
-#dbgvzfontn .gt_indent_5 {
+#pzveloiefp .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
-<table class="gt_table">
+  <table class="gt_table">
   
   <thead class="gt_col_headings">
     <tr>
@@ -755,18 +663,5 @@ Got a shout out to @ropensci, too</td>
   
 </table>
 </div>
-
-## Other resources
-
-- [Python twitter archive parser and other
-  resources](https://github.com/timhutton/twitter-archive-parser)
-
-- How to [download your twitter
-  archive](https://support.twitter.com/articles/20170160)
-
-- [A visual analysis around a twitter
-  hashtag](https://blog.ouseful.info/2012/02/06/visualising-activity-round-a-twitter-hashtag-or-search-term-using-r/)
-
-- [Albert Rapp - How to collect dataviz from Twitter into your
-  note-taking
-  system](https://albert-rapp.de/posts/09_get_twitter_posts_into_your_notetaking_system/09_get_twitter_posts_into_your_notetaking_system.html)
+</body>
+</html>

@@ -19,15 +19,16 @@ The #rstats hashtag opens a world. Useful to follow specific individuals and the
 
 Grabbing content can be a challenge. My process has been:
 
--   Save Web pages that are referenced in Evernote with its web clipper plugin
-
--   Save images
-
+-   Save Web pages that are referenced in Evernote using its handy web clipper plugin
+-   Save images to my photo library and take it from there
 -   Selective "likes"
+-   Extract relevant text with an OCR browser extension https://github.com/amebalabs/TRex 
 
 ### Getting the Twitter Archive
 
-Here are instructions for downloading your archive from Twitter
+Request a download here: https://twitter.com/settings/download_your_data 
+
+It can take a few days for it to be ready.  You'll get a direct message on Twitter when it's ready to download.
 
 ### Use the built-in html interface
 
@@ -66,9 +67,12 @@ like_df <- as_tibble(flatten(like$like))
 ```
 
 ```{r}
-like_df[1:100,2:3] |> 
+gt_table <- like_df[1:100,2:3] |> 
   filter(str_detect(fullText,"http")) |> 
-  gt()
+  gt() 
+  gtsave(gt_table, "gt_table.html")
+  
+gt_table
 ```
 
 ## Other resources
