@@ -79,7 +79,7 @@ glimpse(like_df)
 
 ```{r}
 sample_table <- like_df[1:50,2:3] |> 
-  filter(str_detect(fullText,"http")) 
+  filter(str_detect(fullText,"http") & str_detect(fullText,"rstat") ) 
 
 kable(sample_table, "simple")
 

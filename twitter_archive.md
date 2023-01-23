@@ -134,161 +134,25 @@ truncated.
 
 ``` r
 sample_table <- like_df[1:50,2:3] |> 
-  filter(str_detect(fullText,"http")) 
+  filter(str_detect(fullText,"http") & str_detect(fullText,"rstat") ) 
 
 kable(sample_table, "simple")
 ```
 
-| fullText                                                                                                                                                                 | expandedUrl                                          |
-|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------|
-| Maple Tree and Small Birds, by Itō Jakuchū, ca. 1765 -1766 https://t.co/mFxOD2c8oZ                                                                                       | https://twitter.com/i/web/status/1588139679483777024 |
-| Classic inference for startup ideas:                                                                                                                                     |                                                      |
-| Deductive➡️ Amazon: Bezos picked books based on industry analysis                                                                                                        |                                                      |
-| Inductive➡️ Quickbooks: Intuit heard complaints from folks using Quicken for business                                                                                    |                                                      |
-| Abductive➡️ Slack: As Glitch failed, they had an epiphany that their chat tool was valuable https://t.co/ft1vtxOBQG https://twitter.com/i/web/status/1587544654202929153 |                                                      |
-| Spring in Mount Atago, by Kawase Hasui, 1921                                                                                                                             |                                                      |
-
-\#shinhanga https://t.co/58HrPfML0U
-https://twitter.com/i/web/status/1580547904548356096 A young woman from
-Kansei period playing with her cat, by Tsukioka Yoshitoshi, 1888
-
-\#ukiyoe https://t.co/TKNwiStqh1
-https://twitter.com/i/web/status/1579664835586838528 One of the most
-interesting videos I’ve ever seen. https://t.co/ZQeMJyPNfO
-https://twitter.com/i/web/status/1578807784887705600 Miyamoto Musashi
-Beating Whale, by Utagawa Kuniyoshi, 1848-1854
-
-\#ukiyoe
-
-https://t.co/pmU1R2bh0H https://t.co/jH8Drh7r0w
-https://twitter.com/i/web/status/1578858019374465024 Waxwing on maple
-tree, by Ohara Koson, 1900s
-
-\#shinhanga https://t.co/N0dcSSplxW
-https://twitter.com/i/web/status/1576165024393043968 I really enjoyed
-presenting “Level up your plots” yesterday at the @RUGatHDSI - talking
-about design tips and \#rstats tricks to enhance the storytelling
-capabilities of our \#dataviz, and how we can apply them within the
-context of \#academic publishing.🧵👇 https://t.co/SFW4xSX4bs
-https://twitter.com/i/web/status/1575852809995505664 From Pictures of
-Flowers and Birds, by Okamoto Shūki, 19th century
-https://t.co/HcTK2mg4Kr
-https://twitter.com/i/web/status/1576061089703493635 I created a video
-on how to use \#QuartoPub + blastula + GitHub Actions to send automated
-emails ✉️ on a schedule 🕒. Check it out here! https://t.co/XA8WUYH1MU
-\#rstats https://twitter.com/i/web/status/1574734992265121794 Imado
-Bridge and Matsuchi Hill, by Utagawa Hiroshige, 1862
-
-\#ukiyoe https://t.co/qufSAu2hCD
-https://twitter.com/i/web/status/1573052515335032832 Crow on a Branch by
-Kawanabe Kyōsai, ca 1887
-
-\#nihonga https://t.co/9ei1XtW4dj
-https://twitter.com/i/web/status/1572902527032561665 Mallards and full
-moon, by Ohara Koson, 1900s
-
-\#shinhanga https://t.co/6db5v1g03o
-https://twitter.com/i/web/status/1571571003347574791 For something we do
-all the time (there are 55 million a day!), most organizations don’t
-spend enough time trying to make meetings better. Here is a synthesis of
-the literature on effective meetings, compiled into 10 rules (all in the
-images). Experiment! https://t.co/NfUdjBj50K https://t.co/82i7kntymH
-https://twitter.com/i/web/status/1569480818258751491 Arranging flowers
-and replacing a hanging scroll with a new one, from the series A Tea
-Ceremony Periwinkle, by Mizuno Toshikata, 1897
-
-\#ukiyoe https://t.co/CiUHDQpcG4
-https://twitter.com/i/web/status/1568270002335145984 Teams need to focus
-on learning, not just doing.
-
-When teams focus only on getting a job done, they perform worse than
-teams that also spend time learning from each other. Groups should be
-encouraged to think about learning for the future, not just on what they
-are doing now. https://t.co/JBkoFGy3H0
-https://twitter.com/i/web/status/1567923007586181122 Boy seated on a
-tree trunk playing a flute, attributed to Katsushika Hokusai, late 18th
-century-early 19th century
-
-\#ukiyoe https://t.co/s5cb5lzo6q
-https://twitter.com/i/web/status/1567014479409205248 Cockatoo and
-Pomegranate, by Ohara Shōson (Koson), 20th century
-
-\#shinhanga https://t.co/TLfgY3sWnr
-https://twitter.com/i/web/status/1566368975788843011 Diabutsu Temple
-Gate, by Yoshida Hiroshi, 1940
-
-\#shinhanga https://t.co/5N73vakmUl
-https://twitter.com/i/web/status/1565762228229324800 Famous Heroes of
-the Kabuki Stage Played by Frogs, by Utagawa Kuniyoshi, 19th century
-
-\#ukiyoe https://t.co/Mgx2agtOn5
-https://twitter.com/i/web/status/1562757428906639360 Fireworks Like
-Flowers in Bloom at Ryôgoku Bridge in the Eastern Capital, by Utagawa
-Toyoharu, 1770s
-
-\#ukiyoe https://t.co/e1IOpivB1M
-https://twitter.com/i/web/status/1562986940726665217 Mice transcribing a
-book, by Kawanabe Kyōsai, ca. 1870s
-
-\#ukiyoe https://t.co/zuyA6np99F
-https://twitter.com/i/web/status/1562999272722890752 100 years different
-in athletic ability https://t.co/sv5Kn8pqbg
-https://twitter.com/i/web/status/1557066043134279686 @unisaacarroyov
-@sponce1 @USGS @FGazzelloni code: https://t.co/kY7OKUu92B
-https://twitter.com/i/web/status/1556596923938746373 I pulled 5,000
-tweets with the hashtag \#rstudioconf2022 using {rtweet} and made a fun
-lil word cloud with {wordcloud}! Should I be worried python is so
-prominent? Or is that just people quoting @hadleywickham saying he
-refuses to learn 🐍?
-
-Code:https://t.co/sfDNlmwA2t \#RStats https://t.co/UWoxxAxK6V
-https://twitter.com/i/web/status/1555601574034038784 Jianzhen, 1189
-
-\#sculputure https://t.co/7oqdwhG7Hx
-https://twitter.com/i/web/status/1555780203649159168 @datavisFriendly
-@f2harrell Here’s a ton of resources https://t.co/YkOFHhaRgW
-https://twitter.com/i/web/status/1555327593359978496 YESSSSS LETS GOOOOO
-\#rstudioconf2022 https://t.co/WTNPyHiqLZ
-https://twitter.com/i/web/status/1552767410607898624 the cutest guy ever
-followed me on ig today https://t.co/Jt6wdBZS2p
-https://twitter.com/i/web/status/1545078485907083265 What a picture…
-https://t.co/TaSLrbn5sz
-https://twitter.com/i/web/status/1537398315997970436 Using code from
-@topepos, tidy tools from @rstudio, {anytime} from @eddelbuettel, and
-{trelliscopejs} from @hafenstats, I built a cognostic-guided EDA tool
-for exploring COVID-19 cases and deaths by state in less than 50 lines
-of R. \#rstats \#rmedicine https://t.co/P5h64NXwMl
-https://twitter.com/i/web/status/1244653973426114566 R Workflow article
-much improved with automatic Quarto tabs, variable recoding examples,
-more longitudinal data manipulation examples, creating a pop-up window
-data dictionary to guide analysis coding \#Statistics
-https://t.co/AWWpOz2nyW \#rstats @vandy_biostat @VUDataScience
-https://twitter.com/i/web/status/1522607766141034497 Here is the draft
-agenda for the \#rstats for \#peopleanalytics 2-day workshop at the
-@rstudio conference July 25th-26th. \#datascience
-https://t.co/L52Xau7kn4
-https://twitter.com/i/web/status/1520025582209277955 want to rename 192
-variables w/o writing 192 lines of \#RStats code? i got you! 👯
-
-i’m still learning about the power💪of the `!!!` splice operator 🔪💉,
-but for now i’ll happily accept the magic! 💫🧙‍♂️ https://t.co/UDVBjmNxwq
-https://t.co/IycIDLWHIl
-https://twitter.com/i/web/status/1497014703473704965 Here’s a resource I
-find myself using all the time. A while ago I made a sort of cheatsheet
-for the Theme Elements in \#ggplot2 in \#rstats. I have a terrible
-memory and it’s hard to remember all the names! Maybe you find it useful
-too. Download it here⬇️ https://t.co/gEJ7PhzsYa https://t.co/62PJYe6TDR
-https://twitter.com/i/web/status/1496489734457208834 An attempt at
-summarising how to pass columns as arguments when using tidyverse
-functions inside a custom function.
+| fullText                                                                                                                                                                                                                                                                                                        | expandedUrl                                          |
+|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------|
+| I really enjoyed presenting “Level up your plots” yesterday at the @RUGatHDSI - talking about design tips and \#rstats tricks to enhance the storytelling capabilities of our \#dataviz, and how we can apply them within the context of \#academic publishing.🧵👇                                             |                                                      |
+| https://t.co/SFW4xSX4bs https://twitter.com/i/web/status/1575852809995505664                                                                                                                                                                                                                                    |                                                      |
+| I created a video on how to use \#QuartoPub + blastula + GitHub Actions to send automated emails ✉️ on a schedule 🕒. Check it out here! https://t.co/XA8WUYH1MU                                                                                                                                                |                                                      |
+| \#rstats https://twitter.com/i/web/status/1574734992265121794                                                                                                                                                                                                                                                   |                                                      |
+| Using code from @topepos, tidy tools from @rstudio, {anytime} from @eddelbuettel, and {trelliscopejs} from @hafenstats, I built a cognostic-guided EDA tool for exploring COVID-19 cases and deaths by state in less than 50 lines of R. \#rstats \#rmedicine https://t.co/P5h64NXwMl                           | https://twitter.com/i/web/status/1244653973426114566 |
+| R Workflow article much improved with automatic Quarto tabs, variable recoding examples, more longitudinal data manipulation examples, creating a pop-up window data dictionary to guide analysis coding \#Statistics https://t.co/AWWpOz2nyW \#rstats @vandy_biostat @VUDataScience                            | https://twitter.com/i/web/status/1522607766141034497 |
+| Here is the draft agenda for the \#rstats for \#peopleanalytics 2-day workshop at the @rstudio conference July 25th-26th. \#datascience https://t.co/L52Xau7kn4                                                                                                                                                 | https://twitter.com/i/web/status/1520025582209277955 |
+| Here’s a resource I find myself using all the time. A while ago I made a sort of cheatsheet for the Theme Elements in \#ggplot2 in \#rstats. I have a terrible memory and it’s hard to remember all the names! Maybe you find it useful too. Download it here⬇️ https://t.co/gEJ7PhzsYa https://t.co/62PJYe6TDR | https://twitter.com/i/web/status/1496489734457208834 |
+| An attempt at summarising how to pass columns as arguments when using tidyverse functions inside a custom function.                                                                                                                                                                                             |                                                      |
 
 \#rstats https://t.co/J3bAznl5xT
-https://twitter.com/i/web/status/1493908215796535296 Lecture slides for
-my ‘Data Science Programming Methods’ course STAT 447 from this Fall
-2021 at U of Illinois are now accessible via https://t.co/hHewPJY3pl
-covering shell (incl sed/awk), markdown, git(hub), sql, lots of \#Rstats
-up to packaging, and Docker. Enjoy! https://t.co/Dv6XSO1ZWj
-https://twitter.com/i/web/status/1484910046295306245 Lil’ \#rstats thing
+https://twitter.com/i/web/status/1493908215796535296 Lil’ \#rstats thing
 I learned today: how to easily ignore all .DS_Store files with the
 git_vaccinate() function from the usethis package.
 https://t.co/zzHI0sYcf3
@@ -296,10 +160,7 @@ https://twitter.com/i/web/status/1478365685390757900 I’ve written a
 little R package called tabbycat for tabulating and summarising
 categorical variables. It’s designed to work nicely with the tidyverse.
 \#rstats https://t.co/Wn0v5gtyC2
-https://twitter.com/i/web/status/1442209392070479875 Michael K. Williams
-talking to different versions of himself on getting typecast as a black
-man. https://t.co/uRowCxU4Tf
-https://twitter.com/i/web/status/1434982712104816640
+https://twitter.com/i/web/status/1442209392070479875
 
 ## Other resources
 
