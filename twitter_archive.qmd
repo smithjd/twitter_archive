@@ -44,7 +44,10 @@ library(tidyverse)
 library(here)
 library(jsonlite)
 library(gt)
+library(knitr)
 ```
+
+Each archive file has some junk at the beginning that you need to skip.  Different files have a different amount of junk, so you have to figure out how much of the file to skip.
 
 ```{r}
 #| label: read the files
@@ -62,6 +65,8 @@ like <- read_file(here("data", "like.js")) |>
 str(like[[1]])
 ```
 
+The `flatten` function is handy for pulling data frames out of JSON structures.
+
 ```{r}
 following_df <- as_tibble(flatten(following$following))
 glimpse(following_df)
@@ -70,13 +75,14 @@ like_df <- as_tibble(flatten(like$like))
 glimpse(like_df)
 ```
 
+`gt` is a handy way to have a look at text that would otherwise get truncated.
+
 ```{r}
-gt_table <- like_df[1:100,2:3] |> 
-  filter(str_detect(fullText,"http")) |> 
-  gt() 
-  gtsave(gt_table, "gt_table.html")
-  
-gt_table
+sample_table <- like_df[1:50,2:3] |> 
+  filter(str_detect(fullText,"http")) 
+
+kable(sample_table, "simple")
+
 ```
 
 ## Other resources
