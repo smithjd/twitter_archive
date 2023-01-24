@@ -85,7 +85,22 @@ kable(sample_table, "simple")
 
 ```
 
+```{r}
+like_df[1:50, 2:3] |>
+  filter(str_detect(fullText, "http") &
+           str_detect(fullText, "rstat")) |>
+  mutate(fullText = paste(expandedUrl, "\n", str_wrap(fullText, 100))) |>
+  select(fullText) |> 
+  unlist() |> 
+  cat( sep = "\n\n")
+
+
+```
+
+
 ## Other resources
+
+-   [Albert Rapp - How to collect dataviz from Twitter into your note-taking system](https://albert-rapp.de/posts/09_get_twitter_posts_into_your_notetaking_system/09_get_twitter_posts_into_your_notetaking_system.html)
 
 -   [Python twitter archive parser and other resources](https://github.com/timhutton/twitter-archive-parser)
 
@@ -93,4 +108,4 @@ kable(sample_table, "simple")
 
 -   [A visual analysis around a twitter hashtag](https://blog.ouseful.info/2012/02/06/visualising-activity-round-a-twitter-hashtag-or-search-term-using-r/)
 
--   [Albert Rapp - How to collect dataviz from Twitter into your note-taking system](https://albert-rapp.de/posts/09_get_twitter_posts_into_your_notetaking_system/09_get_twitter_posts_into_your_notetaking_system.html)
+-   [Find your Twitter pals on Mastodon](https://fedifinder.glitch.me/#)

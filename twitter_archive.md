@@ -162,7 +162,62 @@ categorical variables. It’s designed to work nicely with the tidyverse.
 \#rstats https://t.co/Wn0v5gtyC2
 https://twitter.com/i/web/status/1442209392070479875
 
+``` r
+like_df[1:50, 2:3] |>
+  filter(str_detect(fullText, "http") &
+           str_detect(fullText, "rstat")) |>
+  mutate(fullText = paste(expandedUrl, "\n", str_wrap(fullText, 100))) |>
+  select(fullText) |> 
+  unlist() |> 
+  cat( sep = "\n\n")
+```
+
+    https://twitter.com/i/web/status/1575852809995505664 
+     I really enjoyed presenting "Level up your plots" yesterday at the @RUGatHDSI - talking about design
+    tips and #rstats tricks to enhance the storytelling capabilities of our #dataviz, and how we can
+    apply them within the context of #academic publishing.🧵👇 https://t.co/SFW4xSX4bs
+
+    https://twitter.com/i/web/status/1574734992265121794 
+     I created a video on how to use #QuartoPub + blastula + GitHub Actions to send automated emails ✉️
+    on a schedule 🕒. Check it out here! https://t.co/XA8WUYH1MU #rstats
+
+    https://twitter.com/i/web/status/1244653973426114566 
+     Using code from @topepos, tidy tools from @rstudio, {anytime} from @eddelbuettel, and
+    {trelliscopejs} from @hafenstats, I built a cognostic-guided EDA tool for exploring COVID-19 cases
+    and deaths by state in less than 50 lines of R. #rstats #rmedicine https://t.co/P5h64NXwMl
+
+    https://twitter.com/i/web/status/1522607766141034497 
+     R Workflow article much improved with automatic Quarto tabs, variable recoding examples, more
+    longitudinal data manipulation examples, creating a pop-up window data dictionary to guide analysis
+    coding #Statistics https://t.co/AWWpOz2nyW #rstats @vandy_biostat @VUDataScience
+
+    https://twitter.com/i/web/status/1520025582209277955 
+     Here is the draft agenda for the #rstats for #peopleanalytics 2-day workshop at the @rstudio
+    conference July 25th-26th. #datascience https://t.co/L52Xau7kn4
+
+    https://twitter.com/i/web/status/1496489734457208834 
+     Here's a resource I find myself using all the time. A while ago I made a sort of cheatsheet
+    for the Theme Elements in #ggplot2 in #rstats. I have a terrible memory and it's hard to
+    remember all the names! Maybe you find it useful too. Download it here⬇️ https://t.co/gEJ7PhzsYa
+    https://t.co/62PJYe6TDR
+
+    https://twitter.com/i/web/status/1493908215796535296 
+     An attempt at summarising how to pass columns as arguments when using tidyverse functions inside a
+    custom function. #rstats https://t.co/J3bAznl5xT
+
+    https://twitter.com/i/web/status/1478365685390757900 
+     Lil' #rstats thing I learned today: how to easily ignore all .DS_Store files with the
+    git_vaccinate() function from the usethis package. https://t.co/zzHI0sYcf3
+
+    https://twitter.com/i/web/status/1442209392070479875 
+     I've written a little R package called tabbycat for tabulating and summarising categorical
+    variables. It's designed to work nicely with the tidyverse. #rstats https://t.co/Wn0v5gtyC2
+
 ## Other resources
+
+- [Albert Rapp - How to collect dataviz from Twitter into your
+  note-taking
+  system](https://albert-rapp.de/posts/09_get_twitter_posts_into_your_notetaking_system/09_get_twitter_posts_into_your_notetaking_system.html)
 
 - [Python twitter archive parser and other
   resources](https://github.com/timhutton/twitter-archive-parser)
@@ -173,6 +228,4 @@ https://twitter.com/i/web/status/1442209392070479875
 - [A visual analysis around a twitter
   hashtag](https://blog.ouseful.info/2012/02/06/visualising-activity-round-a-twitter-hashtag-or-search-term-using-r/)
 
-- [Albert Rapp - How to collect dataviz from Twitter into your
-  note-taking
-  system](https://albert-rapp.de/posts/09_get_twitter_posts_into_your_notetaking_system/09_get_twitter_posts_into_your_notetaking_system.html)
+- [Find your Twitter pals on Mastodon](https://fedifinder.glitch.me/#)
